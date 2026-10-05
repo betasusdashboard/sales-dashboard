@@ -61,6 +61,11 @@ if not st.session_state.logged_in:
 
     st.stop()
 
+# ─── MANUAL REFRESH DATA ─────────────────────────────────────────────────────
+if st.button("🔄 Refresh Data"):
+    st.cache_data.clear()
+    st.rerun()
+
 # ─── INGESTION DATA VIA UTILS ────────────────────────────────────────────────
 @st.cache_data(ttl=3600)
 def get_cached_data():
